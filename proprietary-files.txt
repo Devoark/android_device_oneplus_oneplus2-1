@@ -365,6 +365,7 @@ vendor/lib64/libmm-disp-apis.so
 vendor/lib64/librs_adreno.so
 vendor/lib64/librs_adreno_sha1.so
 vendor/lib64/libscale.so
+vendor/lib64/libuiblur.so
 
 # Graphics firmware - OxygenOS 3.6.0
 etc/firmware/a420_pfp.fw
@@ -498,6 +499,7 @@ bin/ipacm-diag
 bin/netmgrd
 bin/qmuxd
 bin/radish
+bin/rfs_access
 bin/rmt_storage
 etc/data/dsi_config.xml
 etc/data/netmgr_config.xml
