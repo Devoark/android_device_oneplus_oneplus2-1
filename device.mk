@@ -144,9 +144,15 @@ PRODUCT_PACKAGES += \
     com.dsi.ant.antradio_library \
     libantradio
 
+# Bluetooth HAL
+PRODUCT_PACKAGES += \
+    android.hardware.bluetooth@1.0-impl
+
 # Camera
 PRODUCT_PACKAGES += \
     camera.qcom \
+    camera.device@1.0-impl \
+    android.hardware.camera.provider@2.4-impl \
     libshim_camera \
     libshim_ims-camera \
     sensors.hal.tof \
@@ -183,13 +189,19 @@ PRODUCT_PACKAGES += \
     setup_fs
 
 # Fingerprint sensor
-PRODUCT_PACKAGES += fingerprintd
+PRODUCT_PACKAGES += \
+    fingerprintd \
+    android.hardware.biometrics.fingerprint@2.0-service
     
 # FM
 PRODUCT_PACKAGES += libfmjni
 
 # For android_filesystem_config.h
 PRODUCT_PACKAGES += fs_config_files
+
+# Gatekeeper
+PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0-impl
 
 # GPS
 PRODUCT_PACKAGES += \
@@ -201,6 +213,9 @@ PRODUCT_PACKAGES += \
     quipc.conf \
     sap.conf \
     xtwifi.conf
+
+PRODUCT_PACKAGES += \
+    android.hardware.gnss@1.0-impl
 
 # IPv6
 PRODUCT_PACKAGES += \
@@ -216,8 +231,15 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/fpc1020.kl:system/usr/keylayout/fpc1020.kl \
     $(LOCAL_PATH)/keylayout/synaptics.kl:system/usr/keylayout/synaptics.kl
 
+# Keymaster HAL
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@3.0-impl
+
 # Lights
 PRODUCT_PACKAGES += lights.qcom
+
+PRODUCT_PACKAGES += \
+    android.hardware.light@2.0-impl
 
 # LiveDisplay native
 PRODUCT_PACKAGES += libjni_livedisplay
@@ -271,6 +293,9 @@ PRODUCT_COPY_FILES += \
 # Power
 PRODUCT_PACKAGES += power.qcom
 
+PRODUCT_PACKAGES += \
+    android.hardware.power@1.0-impl
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom \
@@ -284,6 +309,10 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.sh \
     ueventd.qcom.rc
 
+# RenderScript HAL
+PRODUCT_PACKAGES += \
+    android.hardware.renderscript@1.0-impl
+
 # RIL
 PRODUCT_PACKAGES += \
     librmnetctl \
@@ -296,12 +325,22 @@ PRODUCT_PACKAGES += \
     sensors.qcom \
     sensors.ssc.wrapper
 
+PRODUCT_PACKAGES += \
+    android.hardware.sensors@1.0-impl
+
 PRODUCT_PACKAGES += tcmiface
 PRODUCT_PACKAGES += telephony-ext
 
 # USB
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
+
+PRODUCT_PACKAGES += \
+    android.hardware.usb@1.0-service
+
+# Vibrator
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator@1.0-impl
 
 # VR
 PRODUCT_PACKAGES += vr.qcom
@@ -316,6 +355,9 @@ PRODUCT_PACKAGES += \
     libwpa_client \
     wpa_supplicant \
     wpa_supplicant.conf
+
+PRODUCT_PACKAGES += \
+    android.hardware.wifi@1.0-service \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/hostapd.accept:system/etc/hostapd/hostapd.accept \
