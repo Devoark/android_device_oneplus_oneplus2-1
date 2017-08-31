@@ -15,6 +15,7 @@
 #
 
 $(call inherit-product-if-exists, vendor/oneplus/oneplus2/oneplus2-vendor.mk)
+$(call inherit-product, device/oneplus/oneplus2/common64.mk)
 
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 TARGET_USES_MEDIA_EXTENSIONS := true
@@ -150,6 +151,11 @@ PRODUCT_PACKAGES += \
 # Fingerprint sensor
 PRODUCT_PACKAGES += \
     fingerprintd
+    
+# FM
+PRODUCT_PACKAGES += \
+    FMRadio \
+    libfmjni
 
 # For android_filesystem_config.h
 PRODUCT_PACKAGES += \
