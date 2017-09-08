@@ -249,12 +249,17 @@ PRODUCT_PACKAGES += \
 # RIL
 PRODUCT_PACKAGES += \
     librmnetctl \
-    libxml2
+    libxml2 \
+    libcnefeatureconfig \
+    libprotobuf-cpp-full
 
 # Sensors
 PRODUCT_PACKAGES += \
     sensors.msm8994 \
     sensors.ssc.wrapper
+
+PRODUCT_PACKAGES += tcmiface
+PRODUCT_PACKAGES += telephony-ext
 
 # USB
 PRODUCT_PACKAGES += \
