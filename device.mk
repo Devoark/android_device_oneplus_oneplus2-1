@@ -237,8 +237,7 @@ PRODUCT_PACKAGES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    sensors.msm8994 \
-    sensors.ssc.wrapper
+    sensors.msm8994
 
 PRODUCT_PACKAGES += tcmiface
 PRODUCT_PACKAGES += telephony-ext
