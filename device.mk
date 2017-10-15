@@ -251,6 +251,7 @@ PRODUCT_PACKAGES += \
 # Sensors
 PRODUCT_PACKAGES += \
     sensors.qcom \
+    sensors.ssc.wrapper
 
 PRODUCT_PACKAGES += tcmiface
 PRODUCT_PACKAGES += telephony-ext
