@@ -100,8 +100,8 @@ PRODUCT_CHARACTERISTICS := nosdcard
 PRODUCT_PACKAGES += \
     audiod \
     audio.a2dp.default \
-    audio_policy.msm8994 \
-    audio.primary.msm8994 \
+    audio_policy.qcom \
+    audio.primary.qcom \
     audio.r_submix.default \
     audio.usb.default \
     libqcompostprocbundle \
@@ -128,7 +128,7 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    camera.msm8994 \
+    camera.qcom \
     libshim_camera \
     libshim_ims-camera \
     sensors.hal.tof \
@@ -143,10 +143,10 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    copybit.msm8994 \
-    gralloc.msm8994 \
-    hwcomposer.msm8994 \
-    memtrack.msm8994 \
+    copybit.qcom \
+    gralloc.qcom \
+    hwcomposer.qcom \
+    memtrack.qcom \
     liboverlay \
     libtinyxml
 
@@ -167,7 +167,7 @@ PRODUCT_PACKAGES += fs_config_files
 
 # GPS
 PRODUCT_PACKAGES += \
-    gps.msm8994 \
+    gps.qcom \
     flp.conf \
     gps.conf \
     izat.conf \
@@ -191,7 +191,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/synaptics.kl:system/usr/keylayout/synaptics.kl
 
 # Lights
-PRODUCT_PACKAGES += lights.msm8994
+PRODUCT_PACKAGES += lights.qcom
 
 # LiveDisplay native
 PRODUCT_PACKAGES += libjni_livedisplay
@@ -226,7 +226,7 @@ PRODUCT_PACKAGES += \
     libstagefright_soft_flacdec
 
 # Power
-PRODUCT_PACKAGES += power.msm8994
+PRODUCT_PACKAGES += power.qcom
 
 # Ramdisk
 PRODUCT_PACKAGES += \
@@ -250,7 +250,7 @@ PRODUCT_PACKAGES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    sensors.msm8994
+    sensors.qcom \
 
 PRODUCT_PACKAGES += tcmiface
 PRODUCT_PACKAGES += telephony-ext
@@ -260,7 +260,7 @@ PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
 
 # VR
-PRODUCT_PACKAGES += vr.msm8994
+PRODUCT_PACKAGES += vr.qcom
 
 # MIDI feature
 PRODUCT_COPY_FILES += \
