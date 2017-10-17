@@ -39,8 +39,8 @@ USE_CLANG_PLATFORM_BUILD := true
 TARGET_BOARD_INFO_FILE ?= $(PLATFORM_PATH)/board-info.txt
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := MSM8994
-BOOTLOADER_GCC_VERSION := arm-eabi-4.9
+TARGET_BOOTLOADER_BOARD_NAME := msm8994
+BOOTLOADER_GCC_VERSION := arm-eabi-4.8
 TARGET_NO_BOOTLOADER := true
 
 # Platform
@@ -55,8 +55,6 @@ TARGET_CPU_ABI2 :=
 TARGET_CPU_VARIANT := cortex-a53
 
 TARGET_CPU_CORTEX_A53 := true
-TARGET_BOARD_SUFFIX := _64
-TARGET_USES_64_BIT_BINDER := true
 
 TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv7-a-neon
@@ -65,11 +63,13 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53.a57
 
 # Kernel
-BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 boot_cpus=0-5 androidboot.selinux=permissive
-BOARD_KERNEL_BASE := 0x00000000
-BOARD_KERNEL_PAGESIZE := 4096
-BOARD_KERNEL_TAGS_OFFSET := 0x00000100
-BOARD_RAMDISK_OFFSET := 0x01000000
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 boot_cpus=0-5 androidboot.selinux=permissive
+
+BOARD_KERNEL_BASE        := 0x00000000
+BOARD_KERNEL_PAGESIZE    := 4096
+BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
+BOARD_RAMDISK_OFFSET     := 0x02000000
+
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_KERNEL_APPEND_DTB := true
 TARGET_KERNEL_ARCH := arm64
@@ -142,6 +142,11 @@ TARGET_USES_ION := true
 # Filesystem
 TARGET_ANDROID_FILESYSTEM_CONFIG_H := $(PLATFORM_PATH)/android_filesystem_config.h
 
+BOARD_EGL_CFG := $(PLATFORM_PATH)/egl.cfg
+
+MAX_EGL_CACHE_KEY_SIZE := 12*1024
+MAX_EGL_CACHE_SIZE := 2048*1024
+
 BOARD_SECCOMP_POLICY := $(PLATFORM_PATH)/seccomp
 
 # FM
@@ -180,11 +185,16 @@ TARGET_USERIMAGES_USE_F2FS := true
 TARGET_POWERHAL_VARIANT := qcom
 TARGET_USES_DEVICE_SPECIFIC_POWERHAL := true
 
+# Added to indicate that protobuf-c is supported in this build
+PROTOBUF_SUPPORTED := false
+
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true
 
 # RPC
 TARGET_NO_RPC := true
+
+TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 
 # Sensors
 USE_SENSOR_MULTI_HAL := true
