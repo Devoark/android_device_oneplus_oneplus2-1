@@ -255,7 +255,9 @@ PRODUCT_PACKAGES += \
     libstagefright_soft_flacenc
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/media_codecs_performance.xml:system/etc/media_codecs_performance.xml
+    device/oneplus/oneplus2/configs/media/media_profiles.xml:system/etc/media_profiles.xml \
+    device/oneplus/oneplus2/configs/media/media_codecs.xml:system/etc/media_codecs.xml \
+    device/oneplus/oneplus2/configs/media/media_codecs_performance.xml:system/etc/media_codecs_performance.xml
 
 # OMX
 PRODUCT_PACKAGES += \
@@ -279,11 +281,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml \
-    $(LOCAL_PATH)/configs/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
-    $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml
 
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
